@@ -9,6 +9,6 @@ public class PrintFormatacaoNumeros {
         String valorString = NumberFormat.getCurrencyInstance(ptBr).format(valor);
         String valorFormatado= valorString.substring(0,8) + '.' + valorString.substring(9);
         String valorFormatadoFinal = valorFormatado.substring(0,4) + ',' + valorFormatado.substring(5);
-        System.out.printf("Valor: %s\nTaxa: %.2f%%", valorFormatadoFinal, taxa);
+        System.out.printf("Valor: %s\nTaxa: %.2f%%\n", valorFormatadoFinal, taxa);
     }
 }
