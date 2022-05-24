@@ -23,9 +23,13 @@ public class Program {
                 new ItemPedido(dvd2, 1)
         };
 
+        // gambiarra:
         Pedido pedido1 = new Pedido(0, itensPedido1);
+        String total1 = Double.toString(pedido1.calcularTotal());
+        int commaIndex1 = total1.indexOf(".");
+        total1 = total1.substring(0, commaIndex1 + 3);
 
-        System.out.printf(Locale.getDefault(), "Total Pedido: %.2f\n", pedido1.calcularTotal());
+        System.out.println("Total Pedido: " + total1.replace('.', ','));
 
         // Pedido 2
         ItemPedido[] itensPedido2 = new ItemPedido[]{
@@ -33,9 +37,13 @@ public class Program {
                 new ItemPedido(dvd2, 1)
         };
 
+        // gambiarra:
         Pedido pedido2 = new Pedido(10, itensPedido2);
+        String total2 = Double.toString(pedido2.calcularTotal());
+        int commaIndex2 = total2.indexOf(".");
+        total2 = total2.substring(0, commaIndex2 + 3);
 
-        System.out.printf(Locale.getDefault(), "Total Pedido: %.2f\n", pedido2.calcularTotal());
+        System.out.println("Total Pedido: " + total2.replace('.', ','));
 
         // Pedido 3
         ItemPedido[] itensPedido3 = new ItemPedido[]{
@@ -44,10 +52,13 @@ public class Program {
                 new ItemPedido(dvd1, 1)
         };
 
+        // gambiarra:
         Pedido pedido3 = new Pedido(5, itensPedido3);
+        String total3 = Double.toString(pedido3.calcularTotal());
+        int commaIndex3 = total3.indexOf(".");
+        total3 = total3.substring(0, commaIndex3 + 3);
 
-        System.out.printf(Locale.getDefault(), "Total Pedido: %.2f\n", pedido3.calcularTotal());
-
+        System.out.println("Total Pedido: " + total3.replace('.', ','));
         // Pedido 4
         ItemPedido[] itensPedido4 = new ItemPedido[]{
                 new ItemPedido(livro2, 1),
@@ -57,8 +68,12 @@ public class Program {
                 new ItemPedido(dvd2, 2)
         };
 
+        // gambiarra:
         Pedido pedido4 = new Pedido(5, itensPedido4);
+        String total4 = Double.toString(pedido4.calcularTotal());
+        int commaIndex4 = total4.indexOf(".");
+        total4 = total4.substring(0, commaIndex4 + 3);
 
-        System.out.printf(Locale.getDefault(), "Total Pedido: %.2f\n", pedido4.calcularTotal());
+        System.out.println("Total Pedido: " + total4.replace('.', ','));
     }
 }
