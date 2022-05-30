@@ -4,15 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListaTodo {
-    private List<Tarefa> tarefas;
+    private ArrayList<Tarefa> tarefas;
 
     public ListaTodo() {
         tarefas = new ArrayList<>();
     }
 
-    public void adicionarTarefa(Tarefa tarefa) throws Exception {
+    public void adicionarTarefa(Tarefa tarefa) throws IllegalArgumentException {
         if (this.verificarExistencia(tarefa)) {
-            throw new Exception("Tarefa com identificador " + tarefa.getIdentificador() + " ja existente na lista");
+            throw new IllegalArgumentException("Tarefa com identificador " + tarefa.getIdentificador() + " ja existente na lista");
         }
 
         tarefas.add(tarefa);

@@ -5,11 +5,8 @@ public class Tarefa {
     private int identificador;
     private boolean estahFeita;
 
-    public Tarefa(String descricao, int i) throws Exception {
-        if (descricao == null || descricao.equals("")) {
-            throw new Exception("Descricao de tarefa invalida");
-        }
-        this.descricao = descricao;
+    public Tarefa(String descricao, int i){
+        this.modificarDescricao(descricao);
         this.identificador = i;
     }
 
@@ -21,9 +18,9 @@ public class Tarefa {
         return identificador;
     }
 
-    public void modificarDescricao(String descricao) throws Exception {
+    public void modificarDescricao(String descricao) throws IllegalArgumentException {
         if (descricao == null || descricao.equals("")) {
-            throw new Exception("Descricao de tarefa invalida");
+            throw new IllegalArgumentException("Descricao de tarefa invalida");
         }
 
         this.descricao = descricao;
