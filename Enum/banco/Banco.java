@@ -70,7 +70,7 @@ public class Banco {
             if (imprimeTransacoes) {
                 ArrayList<Double> transacoes = cliente.getTransacoes();
                 for (Double transacao : transacoes) {
-                    String valor = String.format("%.2f", transacao).replace(".", ",");
+                    String valor = String.format("%.2f", transacao).replace(",", ".");
                     System.out.printf("  [%d] valor %s\n", transacoes.indexOf(transacao) + 1, valor);
                 }
             }
