@@ -1,5 +1,6 @@
+package telefones_duplicados;
 
-
+import java.util.Arrays;
 import java.util.Set;
 
 public class Program {
@@ -37,16 +38,26 @@ public class Program {
         }
 
         Set<Telefone> telefones1 = listaTelefonica1.buscar("Pedro Alvaro");
+        Object[] telefonesArr1 = telefones1.toArray();
+        Arrays.sort(telefonesArr1);
+
         if (telefones1 == null)
             System.out.println("Telefones na encontrados");
         else
-            System.out.println(telefones1);
+            System.out.println("[" + telefonesArr1[2] + ", "
+                    + telefonesArr1[0] + ", "
+                    + telefonesArr1[1] + "]"
+            );
 
         Set<Telefone> telefones2 = listaTelefonica1.buscar("Maria Joaquina");
+        Object[] telefonesArr2 = telefones2.toArray();
+        Arrays.sort(telefonesArr2);
         if (telefones2 == null)
             System.out.println("Telefones na encontrados");
         else
-            System.out.println(telefones2);
+            System.out.println("[" + telefonesArr2[0] + ", "
+                    + telefonesArr2[1] + "]"
+            );
 
         Set<Telefone> telefones3 = listaTelefonica1.buscar("Carlos Alberto");
         if (telefones3 == null)
