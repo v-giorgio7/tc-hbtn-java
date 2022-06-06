@@ -3,6 +3,7 @@
 import java.util.Map;
 import java.util.Set;
 
+@SuppressWarnings("unchecked")
 public class Program {
     public static void main(String[] args) {
         Blog blog1 = new Blog();
