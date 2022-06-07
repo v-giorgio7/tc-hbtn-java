@@ -8,10 +8,10 @@ public class Program {
                     "Lilia Moritz Schwarcz",
                     56);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
+            System.out.printf("Titulo: %s - Autor: %s - Preco: %s\n",
                     livro1.getTitulo(),
                     livro1.getAutor(),
-                    livro1.getPreco());
+                    convertDouble(livro1.getPreco()));
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
         }
@@ -22,10 +22,10 @@ public class Program {
                     "Fernando Morais",
                     38.30);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
+            System.out.printf("Titulo: %s - Autor: %s - Preco: %s\n",
                     livroEdicaoOuro1.getTitulo(),
                     livroEdicaoOuro1.getAutor(),
-                    livroEdicaoOuro1.getPreco());
+                    convertDouble(livroEdicaoOuro1.getPreco()));
 
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
@@ -37,10 +37,10 @@ public class Program {
                     "Rick",
                     21.88);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
+            System.out.printf("Titulo: %s - Autor: %s - Preco: %s\n",
                     livroEdicaoOuro2.getTitulo(),
                     livroEdicaoOuro2.getAutor(),
-                    livroEdicaoOuro2.getPreco());
+                    convertDouble(livroEdicaoOuro2.getPreco()));
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
         }
@@ -51,10 +51,10 @@ public class Program {
                     "Jane Doe",
                     15.99);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
+            System.out.printf("Titulo: %s - Autor: %s - Preco: %s\n",
                     livro2.getTitulo(),
                     livro2.getAutor(),
-                    livro2.getPreco());
+                    convertDouble(livro2.getPreco()));
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
         }
@@ -65,12 +65,17 @@ public class Program {
                     "J.K. Rowling",
                     0);
 
-            System.out.printf("Titulo: %s - Autor: %s - Preco: %.2f\n",
+            System.out.printf("Titulo: %s - Autor: %s - Preco: %s\n",
                     livro3.getTitulo(),
                     livro3.getAutor(),
-                    livro3.getPreco());
+                    convertDouble(livro3.getPreco()));
         } catch (Exception ex) {
             System.out.println(ex.getMessage() + "\n");
         }
+    }
+
+    private static String convertDouble(Double valor) {
+        String valorStr = String.format("%.2f", valor);
+        return valorStr.replace('.', ',');
     }
 }
