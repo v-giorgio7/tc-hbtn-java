@@ -18,8 +18,8 @@ public class Produto {
     public String toString() {
         return String.format("%s %s %s %d %s",
                 this.nome,
-                String.format("%.6f", this.preco).replace(".", ","),
-                String.format("%.6f", this.peso).replace(".", ","),
+                String.format("%.6f", this.preco).replace(",", "."),
+                String.format("%.6f", this.peso).replace(",", "."),
                 this.quantidadeEmEstoque,
                 this.tipo
                 );
