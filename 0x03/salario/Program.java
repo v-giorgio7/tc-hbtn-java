@@ -46,7 +46,7 @@ public class Program {
     }
 
     private static String convertDouble(Double valor) {
-        String valorStr = String.format("%s", valor);
+        String valorStr = String.format("%.2f", valor);
         return valorStr.replace('.', ',');
     }
 }
