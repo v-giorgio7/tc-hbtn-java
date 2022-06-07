@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class ConsultaProdutos {
-    public static List<Produto> filtrar(List<Produto> produtos,
+    public static ArrayList<Produto> filtrar(List<Produto> produtos,
                                         Predicate<Produto> predicateProduto) {
-        List<Produto> listaProdutos = new ArrayList<Produto>();
+        ArrayList<Produto> listaProdutos = new ArrayList<Produto>();
 
         produtos.forEach(p -> {
             if (predicateProduto.test(p)) {
