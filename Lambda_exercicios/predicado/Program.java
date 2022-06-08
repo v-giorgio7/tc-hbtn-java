@@ -1,12 +1,10 @@
-
-
 import java.lang.reflect.Method;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Predicate;
+import java.util.*;
+import java.util.function.*;
 
 public class Program {
     public static void main(String[] args) {
+        Locale.setDefault(new Locale("pt", "BR"));
         Produto produto1 = new Produto("Cafe Chocolate Trufado Baggio",
                 21.99, 250, 120, TiposProduto.COZINHA);
 
@@ -37,13 +35,12 @@ public class Program {
         List<Produto> produtosBaixoEstoque = ConsultaProdutos.filtrar(produtos,
                 p -> p.getQuantidadeEmEstoque() <= 10);
 
-        try
-        {
+        try {
             Method method = ConsultaProdutos.class.getMethod("filtrar", List.class, Predicate.class);
             if (method != null) {
                 System.out.println("Metodo encontrado");
             }
-        } catch(NoSuchMethodException ex) {
+        } catch (NoSuchMethodException ex) {
             System.out.println("Metodo nao encontrado");
         }
 
