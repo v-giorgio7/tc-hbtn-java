@@ -1,6 +1,7 @@
 import java.io.*;
 import java.util.List;
 
+@SuppressWarnings("unchecked")
 public class SerializarEstudantes<T> {
 
     private String nomeArquivo;
@@ -17,7 +18,7 @@ public class SerializarEstudantes<T> {
         this.nomeArquivo = nomeArquivo;
     }
 
-    public void serializar(List<Estudante> listaEstudantes) {
+    public void serializar(List<T> listaEstudantes) {
         try {
             FileOutputStream fileOut = new FileOutputStream(this.nomeArquivo);
             ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
@@ -35,9 +36,7 @@ public class SerializarEstudantes<T> {
             FileInputStream fileInp = new FileInputStream(this.nomeArquivo);
             ObjectInputStream objectInp = new ObjectInputStream(fileInp);
 
-            List<Estudante> listaDesserializada = (List<Estudante>) objectInp.readObject();
-
-            return listaDesserializada;
+            return (List<Estudante>) objectInp.readObject();
 
         } catch (IOException | ClassNotFoundException e) {
             System.out.println("Nao foi possivel desserializar");
