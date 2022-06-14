@@ -49,7 +49,7 @@ public class ConsultaPessoas {
 
         return pessoas.stream().collect(groupingBy(
                 Pessoa::getCargo,
-                flatMapping(pessoa -> pessoa.getHobbies().stream(),
+                Collectors.flatMapping(pessoa -> pessoa.getHobbies().stream(),
                         toCollection(TreeSet::new))
         ));
     }

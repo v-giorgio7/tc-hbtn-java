@@ -41,7 +41,7 @@ public class ConsultaPessoas {
 
         return pessoas.stream().collect(groupingBy(
                 Pessoa::getCargo,
-                averagingDouble(Pessoa::getSalario)
+                Collectors.averagingDouble(Pessoa::getSalario)
         ));
     }
 }

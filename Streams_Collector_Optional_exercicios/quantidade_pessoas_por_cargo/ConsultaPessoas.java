@@ -25,7 +25,7 @@ public class ConsultaPessoas {
 
         return pessoas.stream().collect(groupingBy(
                 Pessoa::getCargo,
-                counting()
+                Collectors.counting()
         ));
     }
 }

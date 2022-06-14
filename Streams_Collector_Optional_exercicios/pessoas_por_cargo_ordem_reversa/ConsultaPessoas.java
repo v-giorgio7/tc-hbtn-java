@@ -15,9 +15,9 @@ public class ConsultaPessoas {
     static TreeMap<String, TreeSet<Pessoa>> obterPessoasAgrupadasPorCargoEmOrdemReversa (
             List<Pessoa> pessoas) {
 
-        return pessoas.stream().collect(groupingBy(
+        return pessoas.stream().collect(Collectors.groupingBy(
                 Pessoa::getCargo,
-                () -> new TreeMap<>(reverseOrder()),
+                () -> new TreeMap<>(Comparator.reverseOrder()),
                 toCollection(() -> new TreeSet<>(comparing(Pessoa::getNome)))));
 
     }
