@@ -7,6 +7,7 @@ import java.util.TreeSet;
 
 import static java.util.Collections.reverseOrder;
 import static java.util.Comparator.comparing;
+import java.util.stream.Collectors;
 import static java.util.stream.Collectors.*;
 
 public class ConsultaPessoas {
